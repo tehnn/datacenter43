@@ -4718,3 +4718,16 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/datacenter/index.php/login
 ---
+2014/07/09 17:05:23 [error] [php] move_uploaded_file(): The second argument to copy() function cannot be a directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): TestController->actionUpload()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(286): TestController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(265): TestController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): TestController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\datacenter\index.php(13): CWebApplication->run()
+REQUEST_URI=/datacenter/index.php?r=test/upload
+in C:\xampp\htdocs\datacenter\protected\controllers\TestController.php (60)
+in C:\xampp\htdocs\datacenter\index.php (13)

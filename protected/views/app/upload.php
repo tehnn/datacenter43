@@ -12,7 +12,7 @@
             <?php
             $this->widget('CMultiFileUpload', array(
                 'name' => 'Upload',
-                'accept' => 'pdf,doc,docx,zip,rar', // useful for verifying files
+                'accept' => 'zip,rar', // useful for verifying files
                 'duplicate' => 'ชื่อไฟล์ซ้ำ!', // useful, i think
                 'denied' => 'ไม่อนุญาตชนิดไฟล์', // useful, i think
                 'max' => 1,

@@ -10,7 +10,7 @@ class AppController extends Controller {
 
         //$dir = '../../upload';
         $dir = 'upload'; //โฟร์เดอร์ upload อยู่ระดับเดียวกับ proteced  
-        
+
         if (count($_FILES) > 0) { // ถ้ามีการ เลือกไฟล์  
             $file = CUploadedFile::getInstancesByName('Upload');
             foreach ($file as $f) {
@@ -19,8 +19,8 @@ class AppController extends Controller {
                 $new_name = iconv('UTF-8', 'TIS-620', $f->getName()); // iconv แก้ปัญหาเรื่องไฟล์มีชื่อภาษาไทย
                 $newfile = $dir . "/" . $new_name;
                 if ($f->saveAs($newfile)) {
-                   
-             
+
+
                     $zip = new ZipArchive;
                     if ($zip->open($newfile) === TRUE) {
                         $p = pathinfo($newfile);
@@ -34,16 +34,16 @@ class AppController extends Controller {
                     }
 
                     if ($dh = opendir($new_dir)) {
-                     
+
                         $model = new Cuploadstat;
                         $hospcode = explode("_", $folder);
                         $hos['hospcode'] = $hospcode[1];
                         $model->hospcode = $hos['hospcode'];
-                        
+
                         $hos['up_time'] = date('Y-m-d H:i:s');
                         $model->up_time = $hos['up_time'];
-                        $uptime=$hos['up_time'];
-                        
+                        $uptime = $hos['up_time'];
+
                         $hos['filename'] = $new_name;
                         $model->filename = $new_name;
                         $model->ip = CHttpRequest::getUserHostAddress();
@@ -64,9 +64,9 @@ class AppController extends Controller {
                                 $rows[$f] = Yii::app()->db->createCommand($sql)->execute();
                             }
                         }
-                        
+
                         // จำนวนที่ insert ได้
-                        
+
                         if (isset($rows['accident'])) {
                             $model->accident = $rows['accident'];
                         }
@@ -75,15 +75,15 @@ class AppController extends Controller {
                             $model->address = $rows['address'];
                         }
 
-                        if (isset($rows['admission'])) {                        
+                        if (isset($rows['admission'])) {
                             $model->admission = $rows['admission'];
                         }
 
-                        if (isset($rows['anc'])) { 
+                        if (isset($rows['anc'])) {
                             $model->anc = $rows['anc'];
                         }
 
-                        if (isset($rows['appointment'])) { 
+                        if (isset($rows['appointment'])) {
                             $model->appointment = $rows['appointment'];
                         }
 
@@ -241,9 +241,9 @@ class AppController extends Controller {
                             $model->women = $rows['women'];
                         }
 
-                        
+
                         //end จำนวนที่ insert แจ๊ค
-                        
+
                         $model->save();
 
                         closedir($dh);
@@ -257,13 +257,10 @@ class AppController extends Controller {
             'rows' => $rows,
             'hos' => $hos,
         ));
-        
-        
     }
 
     public function accessRules() {
         return array(
-            
             array('allow', // allow authenticated user 
                 'actions' => array('upload'),
                 'users' => array('@'),
