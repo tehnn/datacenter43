@@ -21,7 +21,7 @@ $this->breadcrumbs = array(
 <table class="table table-bordered table-striped table-hover table-responsive">
     <thead>
     <th>#</th>
-    <th>แฟ้ม (<?php echo $data[0]->filename; ?>)</th>
+    <th>แฟ้ม (<?php $fname=$data[0]->filename; echo $fname;?>)</th>
     <th>จำนวนข้อมูล(เรคอร์ด)</th>
 </thead>
 <tbody>
@@ -41,7 +41,7 @@ $this->breadcrumbs = array(
                     echo $i;
                     ?></td>
                 <td><?php echo $key; ?></td>
-                <td><?php echo $value; ?></td>
+                <td><?php echo CHtml::link($value,array('Report/OnlyFile','fname'=>$fname,'f'=>$key)); ?></td>
             </tr>
         <?php endif; ?>
     <?php endforeach; ?>

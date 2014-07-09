@@ -23,13 +23,28 @@ class ReportController extends Controller {
         $model = new CActiveDataProvider('Cuploadstat', array(
             'criteria' => array(
                 'condition' => "id=$id",
-               
         )));
 
 
         $this->render('v_hos_upload', array(
             'model' => $model
         ));
+    }
+
+    public function actionOnlyFile($fname = null, $f = null) {
+        if ($f !== NULL && $fname !== null) {
+
+            $sql = "SELECT * FROM $f WHERE FLAG1='$fname'";
+
+            $dataReader = Yii::app()->db->createCommand($sql)->queryAll();
+
+            $data = new CArrayDataProvider($dataReader, array('keyField' => 'HOSPCODE'));
+
+
+            $this->render('v_onlyfile', array(
+                'model' => $data
+            ));
+        }
     }
 
 }

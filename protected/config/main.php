@@ -61,7 +61,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=hdc',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => '',
+            'password' => '112233',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(
