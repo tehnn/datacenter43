@@ -4731,3 +4731,19 @@ Stack trace:
 REQUEST_URI=/datacenter/index.php?r=test/upload
 in C:\xampp\htdocs\datacenter\protected\controllers\TestController.php (60)
 in C:\xampp\htdocs\datacenter\index.php (13)
+2014/07/09 17:34:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "test2/upload".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('test2/upload')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\datacenter\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/datacenter/index.php?r=test2/upload
+---
+2014/07/09 17:35:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "test2/upload".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('test2/upload')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\datacenter\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/datacenter/index.php?r=test2/upload
+---
