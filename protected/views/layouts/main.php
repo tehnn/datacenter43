@@ -39,7 +39,9 @@
                         array('label' => 'ส่งแฟ้ม', 'icon' => 'glyphicon glyphicon-floppy-disk', 'url' => array('/app/upload')),
                         array('label' => 'รายงาน', 'icon' => 'glyphicon glyphicon-list-alt', 'url' => '#',
                             'items' => array(
-                                array('label' => 'ประวัติการส่งข้อมูล', 'url' => array('/report/statupload')),
+                                array('label' => 'ประวัติการส่งข้อมูล','icon'=>'glyphicon glyphicon-time', 'url' => array('/report/statupload')),
+                                '-',
+                                array('label' => 'ตรวจสอบคุณภาพข้อมูล','icon'=>'glyphicon glyphicon-check', 'url' => array('/report/checkfile')),
                             )
                         ),
                         array('label' => 'ข้อมูลตัวชี้วัด', 'icon' => 'glyphicon glyphicon-flag', 'url' => array('/site/kpi')),
