@@ -22,5 +22,16 @@ class Test2Controller extends Controller {
         }
         $this->render('v_upload');
     }
+    
+    
+    public function actionConfirmForm(){
+        if(!empty($_POST[email])){
+            $data=$_POST[email];
+            
+        }
+        $this->render('v_cform');
+    }
+    
+    
 
 }
