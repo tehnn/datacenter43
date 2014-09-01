@@ -30,7 +30,7 @@ class AppController extends Controller {
                         $new_dir = "$dir/$folder/";
                         $zip->extractTo($new_dir);
                         if ($zip->close()) {
-                            unlink($newfile);
+                            //unlink($newfile);
                         }
                     }
 
